@@ -1,0 +1,69 @@
+/* Standalone V11 engineering intelligence, preserving original V10 appearance */
+.v11-section{padding:62px 0 68px;color:#e6f7f3;scroll-margin-top:90px}
+.v11-section *{box-sizing:border-box}
+.v11-title{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:26px}
+.v11-title h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4vw,57px);letter-spacing:-.055em;line-height:1.06;font-weight:700;margin:11px 0}
+.v11-title h2 em{color:#79e7c5;font-style:normal}
+.v11-title p{color:#9db9bd;font-size:14px;line-height:1.65;max-width:750px}
+.v11-overline,.v11-card-head span{font-size:10px;font-weight:800;color:#8fd1c2;letter-spacing:.17em}
+.v11-status,.v11-pill{white-space:nowrap;padding:12px 14px;border:1px solid #376460;border-radius:30px;background:#123139;color:#b0e5d7;font-size:10px;font-weight:800}
+.v11-status i{display:inline-block;width:8px;height:8px;background:#60e6bd;border-radius:50%;margin-right:6px}
+.v11-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:17px}
+.v11-metrics article{min-width:0;border:1px solid #31505a;background:linear-gradient(145deg,#17313a,#0d1e28);border-radius:14px;padding:20px}
+.v11-metrics .v11-impact{background:linear-gradient(140deg,#12463d,#0e2630)}
+.v11-metrics span,.v11-finance span{display:block;color:#9ab8bd;font-size:10px;font-weight:800;letter-spacing:.08em}
+.v11-metrics strong{display:block;font:700 clamp(22px,2.7vw,38px) 'Space Grotesk',sans-serif;letter-spacing:-.05em;color:#f4fff7;margin:10px 0}
+.v11-metrics small{font-size:11px;color:#8dafb1}
+.v11-workspace{display:grid;grid-template-columns:minmax(285px,305px) minmax(0,1fr);gap:17px;align-items:start}
+.v11-input-panel,.v11-card{border:1px solid #30505a;border-radius:16px;background:linear-gradient(145deg,#142c35,#0b1d27);padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.13)}
+.v11-input-panel{position:sticky;top:87px}
+.v11-input-panel h3{color:#edfef9;font-size:17px;margin:7px 0 17px}
+.v11-input-panel hr{border:0;border-top:1px solid #34555d;margin:21px 0}
+.v11-input-panel label{display:block;font-size:10px;color:#abc8c8;font-weight:800;letter-spacing:.06em;margin:12px 0}
+.v11-input-panel input,.v11-input-panel select{display:block;width:100%;margin-top:7px;min-height:40px;border:1px solid #3e6366;color:#e8faf5;background:#091d25;border-radius:8px;font-size:12px;padding:8px;outline:none}
+.v11-input-panel input:focus,.v11-input-panel select:focus{border-color:#5bdfba;box-shadow:0 0 0 2px rgba(100,240,193,.15)}
+.v11-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 10px}
+.v11-two[hidden],#v11-contract-inputs[hidden],#v11-boot-extra[hidden]{display:none!important}
+.v11-note{color:#e4bb89;font-size:11px;line-height:1.6;margin:12px 0}
+.v11-panels{display:flex;flex-direction:column;gap:17px;min-width:0}
+.v11-card-head{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:15px}
+.v11-card-head h3{font:700 19px 'Space Grotesk',sans-serif;letter-spacing:-.025em;color:#effdfa;margin:6px 0 0}
+.v11-card-head b{color:#b0ead9;font-size:11px}
+.v11-legend{display:flex;align-items:center;gap:8px 15px;flex-wrap:wrap;color:#b0c9ca;font-size:10px;margin:12px 0}
+.v11-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:-11px}
+.v11-legend .solar{background:#6de4c4}.v11-legend .battery{background:#7cacf7}.v11-legend .diesel{background:#e6b16c}.v11-legend .unused{background:#778790}
+#v11-power,#v11-soc,#v11-cash{display:block;width:100%;height:auto}
+.v11-soc-head{margin-top:16px;margin-bottom:0}
+.v11-inline{color:#b6e5dd;font-size:11px;border-radius:9px;background:#113139;padding:12px;margin:10px 0 0}
+.v11-scroll{overflow-x:auto;max-width:100%}
+.v11-table{width:100%;min-width:790px;border-collapse:collapse}
+.v11-table th{padding:11px 9px;text-align:left;font-size:9px;letter-spacing:.05em;color:#8bb8bb;border-bottom:1px solid #3c5c61}
+.v11-table td{padding:14px 9px;font-size:11px;color:#daebe9;border-bottom:1px solid #2d5157}
+.v11-table td b{color:#f2fff7}.v11-table .v11-selected{background:#18504335}.v11-warn{color:#ebae79!important}
+.v11-foot,.v11-disclaimer{color:#90adb2;font-size:11px;line-height:1.64;margin:12px 0 0}
+.v11-finance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.v11-finance>div{min-width:0;background:#0a212b;border:1px solid #30505b;border-radius:10px;padding:13px;min-height:101px}
+.v11-finance strong{display:block;color:#effcf6;font-size:clamp(14px,1.6vw,21px);margin-top:14px;line-height:1.25;overflow-wrap:anywhere}
+.v11-chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:17px}
+.v11-chart-grid>div{border-radius:12px;background:#091e27;padding:14px;min-width:0}
+.v11-chart-grid h4{color:#cfe6e2;font-size:12px;margin:0 0 15px}
+.v11-risk-row{display:grid;grid-template-columns:120px 1fr 90px;gap:8px;margin:10px 0;color:#a9c1c3;font-size:10px;align-items:center}
+.v11-risk-row>div{height:10px;border-radius:6px;background:#223c45}
+.v11-risk-row i{display:block;height:100%;background:linear-gradient(90deg,#388e9c,#6ee1bb);border-radius:6px}
+.v11-risk-row b{text-align:right;color:#e4f8f3;font-size:10px}
+.v11-electrical{margin-top:17px}
+#v11-sld{min-width:700px;width:100%;height:auto;display:block;border-radius:9px;background:#0a2029}
+#v11-sld g{outline:none;cursor:pointer}#v11-sld g rect{fill:#19404b;stroke:#51888f;stroke-width:2}
+#v11-sld g:hover rect,#v11-sld g:focus rect{fill:#2b7261;stroke:#98f4d5}
+#v11-sld g text{fill:#eaf7f5;pointer-events:none;font:700 15px 'Space Grotesk',sans-serif}
+.v11-report{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:25px;margin-top:17px;background:#112d34;border:1px solid #3c615f;border-radius:16px}
+.v11-report span{font-size:10px;color:#80e7c6;letter-spacing:.14em;font-weight:800}
+.v11-report h3{font-size:21px;color:#f1fff8;margin:8px 0}
+.v11-report p{max-width:700px;color:#9cbdc0;line-height:1.55;font-size:11px}
+.v11-report>div:last-child{display:flex;flex-direction:column;gap:7px;min-width:220px}
+.v11-button{border:1px solid #488576;border-radius:8px;background:#195148;color:#c5ffe9;font-size:11px;font-weight:800;padding:12px;cursor:pointer}
+.v11-button:hover{background:#2b7461}.v11-reset{width:100%;margin-top:16px;background:#164039}
+.v11-disclaimer{text-align:center;font-size:10px;margin:16px}
+@media(max-width:1100px){.v11-workspace{grid-template-columns:1fr}.v11-input-panel{position:static}.v11-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.v11-section{padding:35px 0}.v11-title{align-items:flex-start;flex-direction:column}.v11-title h2{font-size:36px}.v11-metrics{gap:8px}.v11-metrics article{padding:14px}.v11-metrics strong{font-size:25px}.v11-input-panel,.v11-card{padding:16px}.v11-finance{grid-template-columns:repeat(2,minmax(0,1fr))}.v11-chart-grid{grid-template-columns:1fr}.v11-report{align-items:stretch;flex-direction:column}.v11-report>div:last-child{min-width:0}.v11-risk-row{grid-template-columns:112px 1fr 80px}}
+@media print{.topbar,.hero,.experience-section,.economics-section,.impact-section,.v11-input-panel,.v11-electrical,.v11-report>div:last-child{display:none!important}body{background:#fff!important}.v11-section{width:100%;max-width:none;padding:0;color:#000!important}.v11-workspace{display:block}.v11-panels{display:block}.v11-card,.v11-metrics article{break-inside:avoid;background:#fff!important;border:1px solid #bbb!important;color:#111!important;box-shadow:none!important;margin:10px 0}.v11-section h2,.v11-section h3,.v11-section p,.v11-section strong,.v11-section span,.v11-section small{color:#111!important}.v11-metrics{grid-template-columns:repeat(4,1fr)}.v11-report{background:#fff!important;color:#111!important}}
