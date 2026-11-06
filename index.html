@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071018" />
+    <meta
+      name="description"
+      content="Interactive 3D investment and energy visualization for the WEPCO BED 1-17 ESP solar hybrid project."
+    />
+    <title>WEPCO BED 1-17 | Solar Intelligence V12</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="aurora aurora-a" aria-hidden="true"></div>
+    <div class="aurora aurora-b" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="BED 1-17 dashboard home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-label"
+          >BED <strong>1–17</strong
+          ><span class="brand-sub">SOLAR HYBRID / WEPCO</span></span
+        >
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#experience">3D Experience</a><a href="#economics">Economics</a
+        ><a href="#impact">Impact</a>
+      </nav>
+      <div class="header-actions">
+        <span class="status-badge"><i></i>FEASIBILITY MODEL</span
+        ><a class="header-contact" href="#economics"
+          >Explore the numbers <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero container">
+        <div class="eyebrow">
+          <span class="eyebrow-rule"></span> ENGINEERING VISUALIZATION
+          <span class="eyebrow-sep">/</span> INVESTMENT INTELLIGENCE
+          <span class="tag-rev">2026 • REV 01</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-mini">
+              <span class="spark"></span> WESTERN DESERT, EGYPT
+              <span class="hero-mini-line"></span> ESP ELECTRIFICATION
+            </div>
+            <h1>
+              Powering oil fields<br /><span>with a smarter</span><br /><em
+                >energy mix.</em
+              >
+            </h1>
+            <p class="hero-description">
+              An interactive engineering and financial experience for the
+              proposed
+              <strong>PV + Battery Energy Storage + Diesel</strong> hybrid power
+              system serving the <strong>BED 1-17</strong> electric submersible
+              pump.
+            </p>
+            <div class="hero-buttons">
+              <a class="primary-btn" href="#experience"
+                ><span class="btn-icon">✦</span> Explore the 3D plant
+                <span>↗</span></a
+              ><a class="secondary-btn" href="#economics"
+                >Investment intelligence <span>↘</span></a
+              >
+            </div>
+          </div>
+          <div class="hero-side">
+            <div class="fine-circle">
+              <div class="fine-circle-inner">
+                <div class="micro-label">KEY OPERATING TARGET</div>
+                <span class="circle-number">5.5<span>h</span></span>
+                <div class="circle-small">GENSET OFF / DAY</div>
+              </div>
+              <svg class="ring" viewBox="0 0 220 220" aria-hidden="true">
+                <circle
+                  cx="110"
+                  cy="110"
+                  r="100"
+                  fill="none"
+                  stroke="rgba(167,216,219,.15)"
+                  stroke-width="1"
+                  stroke-dasharray="2 9"
+                />
+                <circle
+                  cx="110"
+                  cy="110"
+                  r="88"
+                  fill="none"
+                  stroke="#4de6c4"
+                  stroke-width="2"
+                  stroke-dasharray="180 373"
+                  stroke-linecap="round"
+                  transform="rotate(-110 110 110)"
+                />
+              </svg>
+            </div>
+            <span class="side-caption"
+              >DIESEL DISPLACEMENT • 365-DAY MODEL</span
+            >
+          </div>
+        </div>
+        <div
+          class="hero-strip"
+          aria-label="Top financial and environmental results"
+        >
+          <article class="hero-kpi">
+            <div class="kpi-top"><span>INITIAL EPC CAPEX</span><b>01</b></div>
+            <strong data-kpi="capex">26.68<span> M</span></strong
+            ><small>EGP <span class="dot-sep">•</span> at 55 EGP / USD</small>
+            <div class="kpi-foot">
+              <span class="tiny-motif"></span> Investment, Year 0
+            </div>
+          </article>
+          <article class="hero-kpi">
+            <div class="kpi-top"><span>CUMULATIVE PAYBACK</span><b>02</b></div>
+            <strong data-kpi="payback">4.36<span> yr</span></strong
+            ><small>Non-discounted cash-flow break-even</small>
+            <div class="kpi-foot">
+              <span class="tiny-motif"></span> 25-year financial horizon
+            </div>
+          </article>
+          <article class="hero-kpi">
+            <div class="kpi-top"><span>PROJECT IRR</span><b>03</b></div>
+            <strong data-kpi="irr">35.86<span>%</span></strong
+            ><small>25-year project cash flows</small>
+            <div class="kpi-foot">
+              <span class="tiny-motif"></span> Net of annual O&amp;M
+            </div>
+          </article>
+          <article class="hero-kpi">
+            <div class="kpi-top"><span>NPV @ 18% DISCOUNT</span><b>04</b></div>
+            <strong data-kpi="npv">90.76<span> M</span></strong
+            ><small
+              >EGP <span class="dot-sep">•</span> base diesel escalation
+              20%</small
+            >
+            <div class="kpi-foot">
+              <span class="tiny-motif"></span> Cumulative present value
+            </div>
+          </article>
+        </div>
+        <div class="section-divider">
+          <span>01 — THE SYSTEM</span><span class="divider-line"></span
+          ><span>SCROLL TO EXPLORE ↓</span>
+        </div>
+      </section>
+
+      <section id="experience" class="experience-section container">
+        <div class="section-head">
+          <div>
+            <span class="overline"
+              >ENGINEERING / POWER SYSTEM ARCHITECTURE</span
+            >
+            <h2>Inside the <span>hybrid microgrid.</span></h2>
+            <p>
+              An interactive conceptual 3D model. Orbit, zoom, explore equipment
+              and scrub hourly 2005–2023 PVGIS TMY-derived weather and a
+              conservative dispatch calculation.
+            </p>
+          </div>
+          <span class="section-index">01 / 03</span>
+        </div>
+        <div class="experience-shell">
+          <div class="viewer-stack">
+            <div class="viewer">
+              <div class="viewer-top">
+                <div class="viewer-chip">
+                  <span class="active-flash"></span> INTERACTIVE 3D
+                  <span class="viewer-chip-light">/ V8 PREMIUM 3D</span>
+                </div>
+                <div class="viewer-toolset">
+                  <button
+                    type="button"
+                    id="view-flow"
+                    class="flow-toggle active"
+                    aria-pressed="true"
+                    aria-label="Show or hide animated energy flow"
+                    title="Show / hide energy flow"
+                  >
+                    FLOW ON</button
+                  ><button
+                    type="button"
+                    id="view-reset"
+                    aria-label="Reset 3D camera"
+                    title="Reset camera"
+                  >
+                    ⌖</button
+                  ><button
+                    type="button"
+                    id="view-pause"
+                    aria-label="Pause 3D animation"
+                    title="Pause animation"
+                  >
+                    Ⅱ
+                  </button>
+                </div>
+              </div>
+              <div
+                id="three-canvas"
+                class="scene-area"
+                role="img"
+                aria-label="Interactive 3D schematic of photovoltaic solar rows, battery storage, generator and well load"
+              >
+                <div id="scene-fallback" class="scene-fallback">
+                  <div class="fallback-art">
+                    <div class="fallback-sun"></div>
+                    <div class="fallback-panels"></div>
+                    <div class="fallback-box a"></div>
+                    <div class="fallback-box b"></div>
+                    <div class="fallback-box c"></div>
+                  </div>
+                  <p>Loading 3D microgrid experience…</p>
+                </div>
+              </div>
+              <div class="viewer-overlay">
+                <div class="viewer-overlay-left">
+                  <span class="coord-marker"
+                    >⌖ <span>29.8653°N / 28.5249°E</span></span
+                  >
+                  <div class="caption">
+                    ILLUSTRATIVE PLANT LAYOUT • NOT AN AS-BUILT DESIGN
+                  </div>
+                </div>
+                <div class="compass">N <span>↗</span></div>
+              </div>
+              <div class="viewer-bottom">
+                <span class="viewer-instructions"
+                  >↻ DRAG TO ORBIT <i></i> SCROLL TO ZOOM <i></i> SELECT AN
+                  ASSET</span
+                ><span class="frame-tag"
+                  >ENGINEERING VISUALIZATION / NOT TO SCALE</span
+                >
+              </div>
+            </div>
+            <section
+              class="cycle-deck"
+              aria-label="24-hour simulated operation"
+            >
+              <div class="cycle-lead">
+                <button
+                  class="cycle-launch"
+                  id="time-play"
+                  type="button"
+                  aria-pressed="false"
+                  aria-label="Play the 24-hour energy cycle"
+                >
+                  <span
+                    class="cycle-launch-icon"
+                    id="play-icon"
+                    aria-hidden="true"
+                    >▶</span
+                  >
+                  <span class="cycle-launch-text"
+                    ><strong id="play-text">PLAY 24-HOUR CYCLE</strong
+                    ><small>ANIMATED DAILY OPERATION · EVEN SLOWER</small></span
+                  >
+                  <span class="cycle-launch-arrow" aria-hidden="true">↗</span>
+                </button>
+                <div class="cycle-clock" aria-live="off">
+                  <span>MODELED CLOCK</span
+                  ><strong id="deck-clock">12:00</strong>
+                  <div class="cycle-progress">
+                    <span id="cycle-progress" style="width: 52%"></span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="camera-console"
+                aria-label="Interactive 3D camera deck"
+              >
+                <div class="camera-console-header">
+                  <strong>3D CAMERA DECK</strong
+                  ><span>EXPLORE EVERY ASSET</span>
+                </div>
+                <div
+                  class="camera-console-buttons"
+                  role="group"
+                  aria-label="3D camera viewpoints"
+                >
+                  <button
+                    type="button"
+                    id="camera-tour"
+                    class="camera-tour"
+                    aria-pressed="false"
+                  >
+                    ▶ CINEMATIC TOUR
+                  </button>
+                  <button
+                    type="button"
+                    data-camera-view="overview"
+                    aria-pressed="true"
+                  >
+                    AERIAL
+                  </button>
+                  <button
+                    type="button"
+                    data-camera-view="pv"
+                    aria-pressed="false"
+                  >
+                    SOLAR PV
+                  </button>
+                  <button
+                    type="button"
+                    data-camera-view="bess"
+                    aria-pressed="false"
+                  >
+                    BESS
+                  </button>
+                  <button
+                    type="button"
+                    data-camera-view="power"
+                    aria-pressed="false"
+                  >
+                    POWER ROOM
+                  </button>
+                  <button
+                    type="button"
+                    data-camera-view="genset"
+                    aria-pressed="false"
+                  >
+                    DIESEL
+                  </button>
+                  <button
+                    type="button"
+                    data-camera-view="esp"
+                    aria-pressed="false"
+                  >
+                    ESP WELL
+                  </button>
+                </div>
+              </div>
+              <div class="cycle-results">
+                <div class="cycle-result">
+                  <span>GENERATOR OFF · FULL-YEAR AVERAGE</span
+                  ><strong
+                    ><b id="model-avg-off">—</b> <small>h / day</small></strong
+                  ><em id="model-avg-detail"
+                    >Based on 8,760 modeled hourly intervals</em
+                  >
+                </div>
+                <div class="cycle-result">
+                  <span>GENERATOR OFF · SELECTED DAY</span
+                  ><strong
+                    ><b id="selected-day-off">—</b>
+                    <small>h / day</small></strong
+                  ><em id="selected-day-detail"
+                    >15 Jun · 24 modeled intervals</em
+                  >
+                </div>
+              </div>
+              <div
+                class="flow-readouts"
+                aria-label="Live electric power flow paths"
+              >
+                <div class="flow-readout solar">
+                  <i></i><span>PV DC → INVERTER*</span
+                  ><strong><b id="flow-pv-kw">0</b> kW</strong>
+                </div>
+                <div class="flow-readout inverter">
+                  <i></i><span>INVERTER AC → LV</span
+                  ><strong><b id="flow-inverter-kw">0</b> kW</strong>
+                </div>
+                <div class="flow-readout battery">
+                  <i></i><span id="flow-battery-label">BATTERY</span
+                  ><strong><b id="flow-battery-kw">0</b> kW</strong>
+                </div>
+                <div class="flow-readout diesel">
+                  <i></i><span>DIESEL</span
+                  ><strong><b id="flow-diesel-kw">0</b> kW</strong>
+                </div>
+                <div class="flow-readout esp">
+                  <i></i><span>ESP LOAD</span
+                  ><strong><b id="flow-esp-kw">0</b> kW</strong>
+                </div>
+              </div>
+              <div class="flow-direction-legend">
+                <span><i class="dc"></i> PV DC → inverter</span
+                ><span><i class="ac"></i> inverter AC → switchgear</span
+                ><span><i class="bess"></i> BESS ↔ LV bus</span
+                ><span><i class="dg"></i> generator → LV bus</span
+                ><span><i class="load"></i> LV bus → VSD</span>
+              </div>
+              <p class="cycle-note">
+                Modeled energy dispatch · Financial reference: 5.5 h/day
+                generator off. <a href="#technical-basis">Technical basis ↗</a>
+              </p>
+            </section>
+          </div>
+          <aside class="operations-panel">
+            <div class="ops-header">
+              <div>
+                <span class="ops-overline">OPERATIONAL EXPLORER</span>
+                <h3>8760-hour energy control room</h3>
+              </div>
+              <span class="ops-sun">☀</span>
+            </div>
+            <div class="ops-time">
+              <span>HOURLY WEATHER + DISPATCH MODEL</span>
+              <div class="clock-text">
+                <strong id="current-time">12:00</strong
+                ><span id="time-period">DAYLIGHT</span>
+              </div>
+            </div>
+            <label class="sr-only" for="hour-range"
+              >Representative time of day</label
+            ><input
+              type="range"
+              id="hour-range"
+              min="0"
+              max="23"
+              step="1"
+              value="12"
+            />
+            <div class="clock-ticks">
+              <span>00:00</span><span>06:00</span><span>12:00</span
+              ><span>18:00</span><span>23:00</span>
+            </div>
+            <div class="weather-controls">
+              <div>
+                <label for="ctrl-month">CLIMATE MONTH</label
+                ><select id="ctrl-month">
+                  <option value="1">Jan</option>
+                  <option value="2">Feb</option>
+                  <option value="3">Mar</option>
+                  <option value="4">Apr</option>
+                  <option value="5">May</option>
+                  <option value="6" selected>Jun</option>
+                  <option value="7">Jul</option>
+                  <option value="8">Aug</option>
+                  <option value="9">Sep</option>
+                  <option value="10">Oct</option>
+                  <option value="11">Nov</option>
+                  <option value="12">Dec</option>
+                </select>
+              </div>
+              <div>
+                <label for="ctrl-day">DAY</label
+                ><input
+                  type="number"
+                  id="ctrl-day"
+                  min="1"
+                  max="30"
+                  step="1"
+                  value="15"
+                />
+              </div>
+            </div>
+            <div class="control-row technical-load">
+              <div class="control-label">
+                <label for="ctrl-load">ESP normal operating load</label
+                ><strong
+                  ><output id="tech-load-kva">165</output
+                  ><span>kVA</span></strong
+                >
+              </div>
+              <input
+                type="range"
+                id="ctrl-load"
+                min="70"
+                max="250"
+                step="5"
+                value="165"
+              />
+              <div class="fine-print">
+                Electrical active load <b id="tech-load-kw">148.5</b> kW • power
+                factor <b id="tech-pf">0.90</b> (assumed, adjustable)
+              </div>
+            </div>
+            <div class="control-row technical-pf">
+              <div class="control-label">
+                <label for="ctrl-pf">Power factor</label
+                ><strong>kW = kVA × PF</strong>
+              </div>
+              <input
+                type="range"
+                id="ctrl-pf"
+                min="0.8"
+                max="1"
+                step="0.01"
+                value="0.9"
+              />
+            </div>
+            <div class="live-plant-status" id="power-status">
+              DISPATCH MODEL
+            </div>
+            <div class="live-metrics">
+              <div>
+                <span>PV AVAILABLE</span
+                ><strong><b id="kwh-pv">0</b> kW</strong>
+              </div>
+              <div>
+                <span>PV → ESP</span><strong><b id="kwh-solar">0</b> kW</strong>
+              </div>
+              <div>
+                <span>BESS → ESP</span
+                ><strong><b id="kwh-batt">0</b> kW</strong>
+              </div>
+              <div>
+                <span>DIESEL → ESP</span
+                ><strong><b id="kwh-diesel">0</b> kW</strong>
+              </div>
+              <div>
+                <span>BATTERY SOC</span><strong><b id="kwh-soc">20</b>%</strong>
+              </div>
+              <div>
+                <span>STORED ENERGY</span
+                ><strong><b id="kwh-stored">64.2</b> kWh</strong>
+              </div>
+              <div>
+                <span>PV → BESS</span
+                ><strong><b id="kwh-charge">0</b> kW</strong>
+              </div>
+              <div>
+                <span>PV CURTAILED</span
+                ><strong><b id="kwh-curtail">0</b> kW</strong>
+              </div>
+            </div>
+            <div class="soc-meter">
+              <div id="soc-fill" style="width: 20%"></div>
+            </div>
+            <div class="power-balance" id="balance-status">
+              Checking power balance…
+            </div>
+            <div class="weather-metrics">
+              <span>☀ GHI <strong id="kwh-ghi">—</strong> W/m²</span
+              ><span>◉ AMBIENT <strong id="kwh-temp">—</strong> °C</span
+              ><span>◎ LOAD <strong id="kwh-load">148.5</strong> kW</span>
+            </div>
+            <div class="day-power">
+              <div class="power-legend">
+                <b>24H POWER SUPPLY</b
+                ><span
+                  ><i class="mint-dot"></i> PV <i class="blue-dot"></i> BESS
+                  <i class="amber-dot"></i> Diesel</span
+                >
+              </div>
+              <svg
+                id="day-power-bars"
+                viewBox="0 0 710 160"
+                role="img"
+                aria-label="Hourly load supply by PV, BESS and diesel"
+              ></svg>
+            </div>
+            <div class="technical-totals">
+              <div>
+                <span>MODELED DG-OFF HOURS/YR</span
+                ><strong id="tech-off-hours">—</strong>
+              </div>
+              <div>
+                <span>DIESEL AVOIDED L/YR*</span
+                ><strong id="tech-fuel">—</strong>
+              </div>
+              <div>
+                <span>PV GROSS MWh/YR</span
+                ><strong id="tech-pv-energy">—</strong>
+              </div>
+              <div>
+                <span>PV CURTAILED MWh/YR</span
+                ><strong id="tech-curtail">—</strong>
+              </div>
+            </div>
+            <p class="technical-note" id="tech-gap">
+              Calculating full-year model…
+            </p>
+            <button
+              class="technical-reset"
+              type="button"
+              id="apply-technical-finance"
+            >
+              ↗ Apply modelled off-hours to economic sensitivity (304 kWp only)</button
+            ><button class="technical-reset" type="button" id="reset-technical">
+              ↺ Reset technical assumptions
+            </button>
+            <details class="methodology-details" id="technical-basis">
+              <summary>
+                <span class="methodology-summary-mark" aria-hidden="true"
+                  >ⓘ</span
+                ><span
+                  ><strong>Technical Basis &amp; Methodology</strong
+                  ><small
+                    >Model assumptions, data provenance &amp; limitations</small
+                  ></span
+                ><span class="methodology-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="methodology-content">
+                <h4>Dispatch model &amp; financial reference</h4>
+                <p>
+                  The selected design, ESP load, power factor and representative
+                  hourly weather determine the modeled generator-off hours. The
+                  financial base case uses a separate 5.5-hour/day generator-off
+                  assumption. Simulation results are screening estimates, not
+                  guaranteed operating hours.
+                </p>
+                <h4>Electrical paths &amp; PV power display</h4>
+                <p>
+                  PV DC animation is shown using AC-equivalent dispatched power
+                  from the hourly model, not measured DC terminal power. Cable
+                  trays, panel layouts and power-flow graphics are conceptual;
+                  they are not surveyed as-built plant geometry.
+                </p>
+                <h4>Weather, diesel and equipment assumptions</h4>
+                <p class="source-footnote">
+                  PVGIS TMY historical climate mosaic (2005–2023), 29.8653°N /
+                  28.5249°E; hourly PV reconstructed from supplied CSV, not
+                  measured or forecast. 1-hour interval averages. PCS for the
+                  304 kWp feasibility variant is a provisional 150 kW
+                  constraint, not an accepted supplier rating; 210 kVA startup
+                  transients are not resolved at this hourly scale. *Diesel
+                  saving is genset-off hours × (740 L/day ÷ 24); true fuel curve
+                  not available. Generator/PV parallel operation disabled in
+                  simulation; PCS, transfer and grid-forming need engineering
+                  validation.
+                  <a
+                    href="https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/api-non-interactive-service_en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >PVGIS documentation ↗</a
+                  >
+                </p>
+                <p class="methodology-note">
+                  Preliminary feasibility visualization based on provided
+                  technical studies and model inputs; engineering design,
+                  controls, electrical protection, safety and commercial
+                  assumptions remain subject to validation before
+                  implementation.
+                </p>
+              </div>
+            </details>
+            <div class="operation-states">
+              <div class="state-item">
+                <span class="state-label"
+                  ><i class="state-dot solar"></i> SOLAR PV</span
+                ><strong id="pv-state">PRODUCING</strong>
+              </div>
+              <div class="state-item">
+                <span class="state-label"
+                  ><i class="state-dot battery"></i> BATTERY (BESS)</span
+                ><strong id="bess-state">SUPPORT</strong>
+              </div>
+              <div class="state-item">
+                <span class="state-label"
+                  ><i class="state-dot diesel"></i> DIESEL GENSET</span
+                ><strong id="diesel-state">OFF</strong>
+              </div>
+              <div class="state-item">
+                <span class="state-label"
+                  ><i class="state-dot load"></i> ESP POWER DEMAND</span
+                ><strong>CONTINUOUS</strong>
+              </div>
+            </div>
+
+            <div class="ops-divide"></div>
+            <label class="mini-field-label" for="design-basis"
+              >SELECT VISUAL DESIGN BASIS</label
+            ><select id="design-basis" class="basis-select">
+              <option value="feasibility">
+                Feasibility model • 304 kWp / 321 kWh
+              </option>
+              <option value="supplier">
+                Supplier scheme • 456 kWp / 483.9 kWh
+              </option>
+            </select>
+            <p class="basis-warning" id="design-warning">
+              Financial results correspond to the 304 kWp feasibility inputs. 3D
+              visualization is indicative.
+            </p>
+            <div class="equipment-focus">
+              <div class="focus-label">INSPECT EQUIPMENT</div>
+              <div
+                class="asset-buttons"
+                role="group"
+                aria-label="Select equipment"
+              >
+                <button
+                  class="asset-btn selected"
+                  data-asset="pv"
+                  type="button"
+                >
+                  PV FIELD</button
+                ><button class="asset-btn" data-asset="bess" type="button">
+                  BESS</button
+                ><button class="asset-btn" data-asset="genset" type="button">
+                  GENSET</button
+                ><button class="asset-btn" data-asset="esp" type="button">
+                  ESP
+                </button>
+              </div>
+              <div class="asset-info">
+                <strong id="asset-title">Solar PV field</strong
+                ><span id="asset-subtitle"
+                  >304 kWp model basis • 650 Wp module reference</span
+                >
+                <p id="asset-description">
+                  Bifacial photovoltaic rows provide daytime generation to the
+                  hybrid AC system. Physical arrangement is conceptual, not an
+                  approved plot plan.
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="system-strip">
+          <div class="system-spec">
+            <span>FINANCIAL-MODEL PV</span
+            ><strong id="spec-pv">304 <small>kWp</small></strong>
+          </div>
+          <div class="system-spec">
+            <span>BATTERY NOMINAL</span
+            ><strong id="spec-bess">321 <small>kWh</small></strong>
+          </div>
+          <div class="system-spec">
+            <span>PV INVERTERS</span
+            ><strong id="spec-inv">2 × 150 <small>kW</small></strong>
+          </div>
+          <div class="system-spec">
+            <span>DESIGN ESP LOAD</span><strong>165 <small>kVA</small></strong>
+          </div>
+          <div class="system-spec last">
+            <span>START-UP LOAD</span><strong>210 <small>kVA</small></strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="economics" class="economics-section container">
+        <div class="section-head">
+          <div>
+            <span class="overline"
+              >INVESTMENT INTELLIGENCE / 25-YEAR CASH FLOW</span
+            >
+            <h2>Where engineering <span>becomes value.</span></h2>
+            <p>
+              Adjust the assumptions, compare diesel escalation scenarios and
+              observe the impact on project economics.
+            </p>
+          </div>
+          <span class="section-index">02 / 03</span>
+        </div>
+        <div class="economics-header">
+          <div>
+            <span class="live-pill"><i></i> INTERACTIVE FINANCIAL SANDBOX</span>
+            <p>
+              Changes below recalculate the original model equations; they do
+              <strong>not</strong> constitute a validated new PV/BESS dispatch
+              study.
+            </p>
+          </div>
+          <button id="reset-model" class="reset-btn" type="button">
+            ↺ Reset to EPROM base case
+          </button>
+        </div>
+        <div class="economic-layout">
+          <div class="model-controls">
+            <h3>Model assumptions <span>✳</span></h3>
+            <p class="subtle">Project-owner economic perspective • EGP</p>
+            <div class="control-row">
+              <div class="control-label">
+                <label for="ctrl-diesel">Delivered diesel price • Year 1</label
+                ><strong
+                  ><output id="o-diesel">73.56</output
+                  ><span>EGP/L</span></strong
+                >
+              </div>
+              <input
+                id="ctrl-diesel"
+                type="range"
+                min="20"
+                max="160"
+                step="0.5"
+                value="73.56"
+              />
+            </div>
+            <div class="control-row">
+              <div class="control-label">
+                <span>Annual diesel escalation</span
+                ><strong id="o-escalation">20%<span> / yr</span></strong>
+              </div>
+              <div
+                class="segment-control"
+                aria-label="Choose annual diesel escalation"
+              >
+                <button type="button" data-escalation="0.1">10%</button
+                ><button type="button" class="active" data-escalation="0.2">
+                  20%</button
+                ><button type="button" data-escalation="0.3">30%</button>
+              </div>
+            </div>
+            <div class="control-row">
+              <div class="control-label">
+                <label for="ctrl-offtime">Genset off-hours per day</label
+                ><strong
+                  ><output id="o-offtime">5.5</output><span>hr</span></strong
+                >
+              </div>
+              <input
+                id="ctrl-offtime"
+                type="range"
+                min="2"
+                max="9"
+                step="0.5"
+                value="5.5"
+              />
+            </div>
+            <div class="control-row">
+              <div class="control-label">
+                <label for="ctrl-fx">EGP / USD exchange rate</label
+                ><strong
+                  ><output id="o-fx">55</output><span>EGP/USD</span></strong
+                >
+              </div>
+              <input
+                id="ctrl-fx"
+                type="range"
+                min="40"
+                max="90"
+                step="1"
+                value="55"
+              />
+            </div>
+            <div class="control-row">
+              <div class="control-label">
+                <label for="ctrl-discount">Financial discount rate</label
+                ><strong
+                  ><output id="o-discount">18</output><span>%</span></strong
+                >
+              </div>
+              <input
+                id="ctrl-discount"
+                type="range"
+                min="8"
+                max="30"
+                step="1"
+                value="18"
+              />
+            </div>
+            <div class="model-fixed">
+              <span>FIXED FEASIBILITY ASSUMPTIONS</span>
+              <div>
+                <p>Baseline generator consumption <b>740 L/day</b></p>
+                <p>O&amp;M budget <b>1% of EPC / yr</b></p>
+                <p>Operating days <b>365 / yr</b></p>
+                <p>Investment horizon <b>25 years</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="model-results">
+            <div class="result-tile flagship">
+              <span>NET PRESENT VALUE <i>18% BASE CASE</i></span
+              ><strong id="result-npv">EGP 90.76M</strong>
+              <div class="result-tile-bottom">
+                <span id="npv-trend">Base assumptions</span
+                ><span>25-YR NPV ↗</span>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="result-tile">
+                <span>PROJECT IRR</span
+                ><strong id="result-irr">35.86<small>%</small></strong>
+                <div class="result-tile-bottom">25-year cash flows</div>
+              </div>
+              <div class="result-tile">
+                <span>CUMULATIVE PAYBACK</span
+                ><strong id="result-payback">4.36<small> yrs</small></strong>
+                <div class="result-tile-bottom">Undiscounted</div>
+              </div>
+            </div>
+            <div class="result-tile compact">
+              <span>YEAR-1 NET OPERATING SAVINGS</span
+              ><strong id="result-year1">EGP 4.29M</strong>
+              <div class="result-tile-bottom">
+                <span>Diesel avoided less annual O&amp;M</span
+                ><span id="result-fuel">61,898 L/yr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-grid">
+          <article class="chart-card cashflow-card">
+            <div class="chart-head">
+              <div>
+                <div class="chart-mini">INVESTMENT RETURN / EGP MILLION</div>
+                <h3>Cumulative cash flow</h3>
+              </div>
+              <div
+                class="chart-toggle"
+                role="group"
+                aria-label="Cash flow chart range"
+              >
+                <button type="button" id="chart-ten" class="active">10Y</button
+                ><button type="button" id="chart-twentyfive">25Y</button>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <svg
+                id="chart-cashflow"
+                viewBox="0 0 800 300"
+                role="img"
+                aria-label="Cumulative project cash flow across 25 years"
+              ></svg>
+            </div>
+            <div class="chart-foot">
+              <span
+                ><i class="legend-dot mint"></i> Nominal cumulative cash
+                flow</span
+              ><span id="cashflow-annotation">Payback ~4.36 years</span>
+            </div>
+          </article>
+          <article class="chart-card price-card">
+            <div class="chart-head">
+              <div>
+                <div class="chart-mini">
+                  ECONOMIC SENSITIVITY / EGP PER LITRE
+                </div>
+                <h3>Diesel price outlook</h3>
+              </div>
+              <span class="chart-tag">LOG SCALE</span>
+            </div>
+            <div class="chart-wrap">
+              <svg
+                id="chart-diesel"
+                viewBox="0 0 560 300"
+                role="img"
+                aria-label="Annual compounded diesel price scenario paths"
+              ></svg>
+            </div>
+            <div class="chart-foot price-foot">
+              <span><i class="legend-dot blue"></i> 10% low</span
+              ><span><i class="legend-dot mint"></i> 20% base</span
+              ><span><i class="legend-dot amber"></i> 30% high</span>
+            </div>
+          </article>
+        </div>
+        <div class="economics-bottom">
+          <div class="breakdown">
+            <div>
+              <span>YEAR 1 • DIESEL COST AVOIDED</span
+              ><strong id="value-gross">EGP 4.55M</strong>
+            </div>
+            <span class="minus-icon">−</span>
+            <div>
+              <span>YEAR 1 • O&amp;M</span
+              ><strong id="value-om">EGP 0.27M</strong>
+            </div>
+            <span class="equal-icon">=</span>
+            <div>
+              <span>YEAR 1 • NET CASH FLOW</span
+              ><strong id="value-net">EGP 4.29M</strong>
+            </div>
+          </div>
+          <p>
+            Cash flows use annual avoided diesel litres × compounded delivered
+            price, less flat annual O&amp;M. No diesel-price forecast is
+            guaranteed.
+          </p>
+        </div>
+      </section>
+
+      <section id="impact" class="impact-section container">
+        <div class="section-head">
+          <div>
+            <span class="overline"
+              >ENERGY TRANSITION / MEASURABLE OUTCOMES</span
+            >
+            <h2>Operational resilience. <span>Lower footprint.</span></h2>
+            <p>
+              Fuel and greenhouse-gas results are linked to the assumed
+              generator downtime, independently of fuel-price escalation.
+            </p>
+          </div>
+          <span class="section-index">03 / 03</span>
+        </div>
+        <div class="impact-grid">
+          <article class="impact-feature">
+            <div class="impact-header">
+              <span>ANNUAL DIESEL DISPLACED</span
+              ><span class="impact-icon">↗</span>
+            </div>
+            <div class="impact-big">
+              <strong id="impact-litres">61,898</strong
+              ><span>LITRES / YEAR</span>
+            </div>
+            <div class="impact-meter">
+              <div id="diesel-bar" style="width: 23%"></div>
+            </div>
+            <p>
+              Compared with continuous baseline genset consumption at 740 L/day.
+              The 5.5 h/day shutdown represents
+              <strong id="impact-ratio">22.9%</strong> of daily operating hours.
+            </p>
+            <div class="impact-indicator">
+              <span>24h BASELINE</span
+              ><span id="impact-split">5.5h SOLAR/BESS WINDOW</span>
+            </div>
+          </article>
+          <article class="impact-feature dark">
+            <div class="impact-header">
+              <span>CARBON AVOIDANCE</span><span class="impact-icon">◎</span>
+            </div>
+            <div class="impact-big">
+              <strong id="impact-carbon">167</strong><span>tCO₂ / YEAR</span>
+            </div>
+            <div class="carbon-circle">
+              <svg viewBox="0 0 160 160" aria-hidden="true">
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="65"
+                  fill="none"
+                  stroke="rgba(255,255,255,.1)"
+                  stroke-width="4"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="65"
+                  fill="none"
+                  stroke="#66e7c9"
+                  stroke-width="4"
+                  stroke-dasharray="281 410"
+                  stroke-linecap="round"
+                  transform="rotate(-90 80 80)"
+                />
+              </svg>
+              <div>
+                <strong id="impact-carbon-life">4,174</strong
+                ><span>tCO₂ / 25 YRS</span>
+              </div>
+            </div>
+            <p>
+              Physical GHG impact only; no carbon-credit revenue is included in
+              the base economics.
+            </p>
+          </article>
+          <article class="impact-feature">
+            <div class="impact-header">
+              <span>GENSET RUNTIME ELIMINATED</span
+              ><span class="impact-icon">↘</span>
+            </div>
+            <div class="impact-big">
+              <strong id="impact-hours">2,007.5</strong
+              ><span>HOURS / YEAR</span>
+            </div>
+            <div class="hours-grid" aria-hidden="true" id="hours-grid"></div>
+            <p>
+              Reducing exposure to diesel logistics, engine hours, fuel
+              handling, emissions and maintenance in a remote oil-field setting.
+            </p>
+            <div class="impact-indicator">
+              <span>ASSUMED OFF TIME</span
+              ><span id="impact-off-day">5.5 HR / DAY</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <span class="footer-project">BED 1–17 <span>✳</span></span>
+          <p>Solar Hybrid / Investment Digital Experience</p>
+        </div>
+        <div>
+          <span>TECHNICAL EVALUATION EXPERIENCE</span>
+          <p>
+            EPROM × WEPCO <span class="footer-star">•</span> WESTERN DESERT,
+            EGYPT
+          </p>
+        </div>
+        <a href="#top">Back to top ↑</a>
+      </div>
+      <p class="disclaimer">
+        Engineering visualization based on project technical studies and
+        simulation data.
+      </p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

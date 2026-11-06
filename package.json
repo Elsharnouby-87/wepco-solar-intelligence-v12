@@ -1,0 +1,18 @@
+{
+  "name": "wepco-solar-intelligence-v12",
+  "private": true,
+  "version": "11.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node tests_dispatch.mjs && node tests_topology.mjs && node tests_v11_model.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
