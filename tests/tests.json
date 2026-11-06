@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Existing V10 3D and hourly energy remain functional",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "3D orbit and camera presets",
+      "8760-hour model",
+      "PV/BESS/DG flows",
+      "24-hour time scrub",
+      "legacy economics"
+    ],
+    "description": "Retains original Three.js site, hourly weather and interactive source flow as the V11 platform foundation.",
+    "steps": [
+      "Open 3D Experience and choose SOLAR PV camera",
+      "Move the hourly slider to 12:00 and observe solar available and generator status",
+      "Move the slider to midnight and confirm diesel supplies load",
+      "Open Economics and move delivered diesel price"
+    ],
+    "expected": "3D assets and source routes remain visible; PV is zero at midnight and financial cards update."
+  },
+  {
+    "name": "V11 scenario compare and diesel savings",
+    "viewport": "desktop",
+    "covers": [
+      "PV/BESS scenario comparison",
+      "dispatch graphs",
+      "fuel proxy disclosure",
+      "carbon outcomes"
+    ],
+    "description": "Compare independently modeled 304 and 456 kWp microgrids with clear fuel and energy provenance.",
+    "steps": [
+      "Open V11 Engineering Intelligence",
+      "Select the 456 kWp supplier scenario",
+      "Check the annual generator-off and curtailed PV output",
+      "Inspect 24-hour dispatch chart and emissions cards"
+    ],
+    "expected": "Supplier scenario displays independent model outputs, and its unpriced EPC cash-flow is not shown as a validated value."
+  },
+  {
+    "name": "Missing CAPEX guardrail",
+    "viewport": "mobile",
+    "covers": [
+      "EPC unknown guardrail",
+      "scenario inputs",
+      "cost validation",
+      "mobile layout"
+    ],
+    "description": "Prevents fictitious supplier economics and allows explicit provisional cost entry.",
+    "steps": [
+      "Select the 456 kWp supplier case",
+      "Verify NPV and IRR are pending without a supplier CAPEX",
+      "Enter an illustrative EPC quote in USD",
+      "Verify results become available and are labelled screening"
+    ],
+    "expected": "Unknown CAPEX is never silently inherited from the 304 kWp base case; results appear only after explicit entry."
+  },
+  {
+    "name": "Power circuit linking and reporting",
+    "viewport": "desktop",
+    "covers": [
+      "interactive SLD",
+      "asset navigation",
+      "CSV export",
+      "print report"
+    ],
+    "description": "Validates live engineering schematic selection and self-contained investment export.",
+    "steps": [
+      "Click the BESS node in the interactive SLD",
+      "Check the 3D scene targets the battery inspector",
+      "Click Export Yearly CSV",
+      "Use Print Executive Report"
+    ],
+    "expected": "BESS asset becomes selected and an Excel-compatible cash-flow CSV downloads; printable executive summary is available."
+  }
+]
