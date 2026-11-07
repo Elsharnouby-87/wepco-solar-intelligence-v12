@@ -79,6 +79,9 @@ function inspect(item) {
   renderChart();
 }
 function schedule() {
+  // 64 full-year option simulations run only when explicitly requested.
+  if (document.body.dataset.v13Mode !== 'advanced' ||
+      document.body.dataset.v13Tab !== 'performance') return;
   clearTimeout(debounce);
   debounce=setTimeout(() => {
     buildOptions();
@@ -126,6 +129,7 @@ function init() {
   for (const id of ['v11-load','v11-pf']) {
     $(id).addEventListener('change',schedule);
   }
+  document.addEventListener('wepco:v13-visibility', schedule);
   schedule();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);

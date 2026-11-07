@@ -1,76 +1,85 @@
 [
   {
-    "name": "Existing V10 3D and hourly energy remain functional",
+    "name": "Executive first-view and simple three-tab journey",
     "sanity": true,
     "viewport": "desktop",
     "covers": [
-      "3D orbit and camera presets",
-      "8760-hour model",
-      "PV/BESS/DG flows",
-      "24-hour time scrub",
-      "legacy economics"
+      "executive four KPI overview",
+      "unified hourly simulation source",
+      "Explore Performance Investment navigation",
+      "one scenario selector",
+      "no duplicate legacy economics"
     ],
-    "description": "Retains original Three.js site, hourly weather and interactive source flow as the V11 platform foundation.",
+    "description": "Checks the new minimal executive information architecture and same-source KPIs across the three tabs.",
     "steps": [
-      "Open 3D Experience and choose SOLAR PV camera",
-      "Move the hourly slider to 12:00 and observe solar available and generator status",
-      "Move the slider to midnight and confirm diesel supplies load",
-      "Open Economics and move delivered diesel price"
+      "Load the website with Essential mode selected",
+      "Read the four executive KPIs",
+      "Select Performance and view the Energy chart",
+      "Select Investment and inspect the NPV and year-one summary",
+      "Return to Explore and inspect the 3D model"
     ],
-    "expected": "3D assets and source routes remain visible; PV is zero at midnight and financial cards update."
+    "expected": "The overview shows four populated model-based KPIs, each tab shows only its own primary content, and 3D remains interactive without duplicated baseline cards."
   },
   {
-    "name": "V11 scenario compare and diesel savings",
+    "name": "Supplier price guardrail and quote",
     "viewport": "desktop",
     "covers": [
-      "PV/BESS scenario comparison",
-      "dispatch graphs",
-      "fuel proxy disclosure",
-      "carbon outcomes"
+      "single global scenario selector",
+      "supplier CAPEX missing guardrail",
+      "scenario-specific financial engine",
+      "input persistence"
     ],
-    "description": "Compare independently modeled 304 and 456 kWp microgrids with clear fuel and energy provenance.",
+    "description": "Switches between different equipment cases without silently applying the wrong EPC cost.",
     "steps": [
-      "Open V11 Engineering Intelligence",
-      "Select the 456 kWp supplier scenario",
-      "Check the annual generator-off and curtailed PV output",
-      "Inspect 24-hour dispatch chart and emissions cards"
+      "Choose 456 kWp supplier in the global selector",
+      "Navigate to Investment",
+      "Verify NPV is CAPEX PENDING or Quote required",
+      "Enter USD 650000 as this scenario EPC budget",
+      "Verify NPV and IRR calculate for supplier case",
+      "Switch to 304 feasibility and check its separate financial input"
     ],
-    "expected": "Supplier scenario displays independent model outputs, and its unpriced EPC cash-flow is not shown as a validated value."
+    "expected": "A missing supplier price blocks financial KPIs, entered price unlocks that case only, and 304 kWp feasibility retains its own EPC assumption."
   },
   {
-    "name": "Missing CAPEX guardrail",
+    "name": "Mobile intuitive exploration and hidden engineer tools",
     "viewport": "mobile",
     "covers": [
-      "EPC unknown guardrail",
-      "scenario inputs",
-      "cost validation",
-      "mobile layout"
+      "mobile navigation",
+      "Essential vs Advanced mode",
+      "simple 3D controls",
+      "equipment microcards",
+      "hourly time slider",
+      "reduced clutter"
     ],
-    "description": "Prevents fictitious supplier economics and allows explicit provisional cost entry.",
+    "description": "Verifies equipment exploration stays simple on mobile and detailed engineering controls are opt-in.",
     "steps": [
-      "Select the 456 kWp supplier case",
-      "Verify NPV and IRR are pending without a supplier CAPEX",
-      "Enter an illustrative EPC quote in USD",
-      "Verify results become available and are labelled screening"
+      "Open Explore in Essential mode on a mobile viewport",
+      "Tap Equipment and choose Battery",
+      "Expand the technical details card and close it",
+      "Use Day / Night and the model hour slider",
+      "Switch Advanced on and inspect detailed camera controls",
+      "Switch Essential on again"
     ],
-    "expected": "Unknown CAPEX is never silently inherited from the 304 kWp base case; results appear only after explicit entry."
+    "expected": "A compact equipment card shows battery capacity, the day/night time changes, and full technical controls appear only in Advanced mode."
   },
   {
-    "name": "Power circuit linking and reporting",
+    "name": "Advanced optimization and executive report",
     "viewport": "desktop",
     "covers": [
-      "interactive SLD",
-      "asset navigation",
-      "CSV export",
-      "print report"
+      "custom case workflow",
+      "64-case Pareto optimization",
+      "advanced engineering details",
+      "executive report print",
+      "engineering disclaimers"
     ],
-    "description": "Validates live engineering schematic selection and self-contained investment export.",
+    "description": "Ensures the heavy optimizer loads only when explicitly enabled and the report is based on current selected assumptions.",
     "steps": [
-      "Click the BESS node in the interactive SLD",
-      "Check the 3D scene targets the battery inspector",
-      "Click Export Yearly CSV",
-      "Use Print Executive Report"
+      "Choose Custom sizing from the top selector and confirm Advanced Performance view opens",
+      "Scroll to the Pareto sizing graph and select an equipment option",
+      "Apply that option to Custom design",
+      "Switch to Investment and inspect the missing custom EPC warning",
+      "Use the Executive report control and preview the printable decision brief"
     ],
-    "expected": "BESS asset becomes selected and an Excel-compatible cash-flow CSV downloads; printable executive summary is available."
+    "expected": "Custom sizing updates technical performance without invented EPC NPV, and printable report includes source assumptions and screening limitations."
   }
 ]

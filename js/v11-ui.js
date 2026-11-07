@@ -202,6 +202,13 @@ function drawCash(rows) {
   node('v11-cash').innerHTML = svg;
 }
 function risk(designSpec, input, base) {
+  // Avoid expensive eight extra 25-year simulations until the user actually
+  // opens the finance risk view. Every inactive chart remains available.
+  if (document.body.dataset.v13Tab !== 'investment' ||
+      document.querySelector('#v11-cash')?.closest('.v11-card')?.dataset.v13Investment !== 'risk') {
+    node('v11-risk').innerHTML = '<p class="v11-foot">Choose Risk factors to run the detailed NPV sensitivities.</p>';
+    return;
+  }
   if (!Number.isFinite(base.npv)) {
     node('v11-risk').innerHTML = '<p class="v11-foot">Supplier/custom cost missing. Enter an EPC price for risk screening.</p>';
     return;
@@ -287,6 +294,18 @@ function update() {
   text('v11-load-sld', fmt(active.loadKw, 1) + ' kW');
   drawDay();
   drawFinance(active, input);
+  // Single source of truth for executive KPIs, 3D power status, PDFs and
+  // custom/supplier comparisons. Report source inputs, not hidden legacy cards.
+  document.dispatchEvent(new CustomEvent('wepco:v11-updated', {
+    detail: {
+      caseId: selected,
+      design: { ...active.design },
+      annual: { ...active.annual },
+      loadKw: active.loadKw,
+      rows: active.rows,
+      inputs: { ...input }
+    }
+  }));
 }
 function scheduleUpdate() {
   clearTimeout(redrawTimer);
@@ -363,6 +382,7 @@ function init() {
   node('v11-export-year').addEventListener('click', () => downloadCSV('WEPCO_V11_Yearly_Cashflow.csv', yearly));
   node('v11-export-hour').addEventListener('click', () => downloadCSV('WEPCO_V11_Hourly_Dispatch.csv', modeled?.rows));
   node('v11-print').addEventListener('click', () => window.print());
+  document.addEventListener('wepco:v13-visibility', scheduleUpdate);
   scheduleUpdate();
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

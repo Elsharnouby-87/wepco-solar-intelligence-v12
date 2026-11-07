@@ -1,6 +1,9 @@
 import './finance.js';
 import './v11-ui.js';
 import './v11-optimizer.js';
+import './v13-shell.js';
+import './v13-energy.js';
+import { simulateForScene } from './v13-adapter.js';
 import {
   simulateYear,
   getIndex,
@@ -297,6 +300,9 @@ function selectAsset(id, zoom = false) {
   txt('asset-subtitle', info[1]);
   txt('asset-description', info[2]);
   if (zoom && state.scene) state.scene.focusAsset(id);
+  document.dispatchEvent(new CustomEvent('wepco:asset-selected', {
+    detail: { id, title: info[0], subtitle: info[1], description: info[2] }
+  }));
 }
 function updateTime() {
   const t = Math.floor(Math.max(0, Math.min(23, Number(state.hour) || 0)));
@@ -431,7 +437,14 @@ function updateTime() {
   }
 }
 function updateDispatch() {
-  state.tech = simulateYear(state.design, state.loadKva, state.powerFactor);
+  // The 3D plant follows the same V11 source-dispatch physics as the
+  // executive KPIs. Its mesh layout remains a conceptual reference.
+  state.tech = simulateForScene(
+    window.WEPCO_V13_CUSTOM_DESIGN ? 'custom' : state.design,
+    state.loadKva,
+    state.powerFactor,
+    window.WEPCO_V13_CUSTOM_DESIGN || null
+  );
   txt('tech-off-hours', nf(state.tech.annual.offHours));
   txt('model-avg-off', nf(state.tech.annual.offHours / 365, 2));
   txt(
@@ -545,10 +558,20 @@ function bind() {
   });
   $('#ctrl-load').addEventListener('input', e => {
     state.loadKva = Number(e.target.value);
+    const v11 = document.getElementById('v11-load');
+    if (v11) {
+      v11.value = String(state.loadKva);
+      v11.dispatchEvent(new Event('input', { bubbles:true }));
+    }
     updateDispatch();
   });
   $('#ctrl-pf').addEventListener('input', e => {
     state.powerFactor = Number(e.target.value);
+    const v11 = document.getElementById('v11-pf');
+    if (v11) {
+      v11.value = String(state.powerFactor);
+      v11.dispatchEvent(new Event('input', { bubbles:true }));
+    }
     updateDispatch();
   });
   $('#ctrl-month').addEventListener('change', e => {
@@ -675,6 +698,22 @@ function bind() {
     requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
+  document.addEventListener('wepco:v11-updated', event => {
+    // Keep 3D load, PV/BESS capacities, source-flow and engineering metrics
+    // in sync with the one visible V13 scenario/physics engine.
+    const newLoad = event.detail?.inputs?.loadKva;
+    const newPf = event.detail?.inputs?.pf;
+    if (Number.isFinite(newLoad)) state.loadKva = newLoad;
+    if (Number.isFinite(newPf)) state.powerFactor = newPf;
+    if (event.detail?.caseId === 'custom') {
+      window.WEPCO_V13_CUSTOM_DESIGN = event.detail.design;
+    } else {
+      window.WEPCO_V13_CUSTOM_DESIGN = null;
+    }
+    $('#ctrl-load').value = String(state.loadKva);
+    $('#ctrl-pf').value = String(state.powerFactor);
+    updateDispatch();
+  });
   updateModel();
   updateTime();
   switchDesign();
@@ -715,6 +754,7 @@ function bind() {
             state.tech.rows[getIndex(state.month, state.day, state.hour)]
           );
         if (reducedMotion) state.scene.setPaused(true);
+        document.dispatchEvent(new CustomEvent('wepco:scene-ready'));
       } catch (err) {
         console.warn('3D renderer unavailable, static schematic shown:', err);
         txt('scene-fallback', '');
