@@ -229,7 +229,13 @@ function showAsset(info) {
   if (!info) return;
   app.lastAsset = info;
   $('v13-asset-title').textContent = info.title;
-  $('v13-asset-subtitle').textContent = info.subtitle;
+  let rating = info.subtitle;
+  if (app.scenario === 'custom' && app.outcome?.design) {
+    const d = app.outcome.design;
+    if (info.id === 'pv') rating = fmt(d.pvKwp) + ' kWp custom input · 3D geometry illustrative';
+    if (info.id === 'bess') rating = fmt(d.bessKwh, 1) + ' kWh custom input · 3D geometry illustrative';
+  }
+  $('v13-asset-subtitle').textContent = rating;
   $('v13-asset-text').textContent = info.description;
   $('v13-asset-text').hidden = true;
   $('v13-asset-more').textContent = 'Technical details ↗';

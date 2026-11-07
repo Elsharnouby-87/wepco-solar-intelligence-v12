@@ -213,3 +213,6 @@ body .footer{margin-top:24px}
 
 /* V13 compact timeline and one-click executive export */
 #v13-timeline-slot{flex:1;min-width:90px;display:flex;align-items:center}#v13-timeline-slot input[type="range"]{width:100%;min-width:0;accent-color:#86f0c9;cursor:pointer}.v13-investment-report{margin-top:18px;display:block;min-width:225px}.v13-flow-assembly{margin:5px 0 10px}.v13-print-report[hidden]{display:none!important}@media(max-width:600px){.v13-investment-report{width:100%}}
+
+/* Mobile first: avoid duplicating the key load number above the 3D experience. */
+@media(max-width:850px){.v13-hero-side{display:none!important}.v13-overview-metrics{margin-top:20px}}
